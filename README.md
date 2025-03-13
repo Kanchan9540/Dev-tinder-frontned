@@ -7,6 +7,10 @@
 - Add NavBar component to App.jsx
 - Create a NavBar.jsx separate Component  file
 - Install react router dom
+- create BrowserRouter > Routes > Router=/ Body > RouteChildren
+- Create an Outlet in your Body Component 
+- Create a Footer 
+- Create a Login Page
 
 
 Body 
