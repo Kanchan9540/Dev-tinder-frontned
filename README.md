@@ -24,7 +24,8 @@
 - If token is not present, redirect user to login page 
 - Logout feature
 - Profile page
-
+- Get the feed and add the feed in the store.
+- Build the userCard on feed
 
 
 Body 
