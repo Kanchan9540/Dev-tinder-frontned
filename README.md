@@ -28,8 +28,8 @@
 - Build the userCard on feed
 - Edit profile feature
 - Show Toast Message on Save of profile.
-- See all my connections
-- 
+- New page to See all my connections
+- New page to See all my connection requests
 
 
 Body 

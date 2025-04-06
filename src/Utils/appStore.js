@@ -3,6 +3,7 @@ import userReducer from "./userSlice";
 import feedReducer from "./feedSlice";
 import ConnectionReducer from "./connectionSlice";
 import Connections from "../Components/Connections";
+import requestReducer from "./requestSlice";
 
 // added slice into the store
 const appStore = configureStore({
@@ -10,6 +11,7 @@ const appStore = configureStore({
       user: userReducer,
       feed: feedReducer,
       connections: ConnectionReducer,
+      requests: requestReducer,
     },
   });
   

@@ -27,7 +27,7 @@ const Connections = () => {
   if (!connections) return <h2 className="text-center text-black">Loading...</h2>;
   if (connections.length === 0) return <h1 className="text-center text-black">No Connections Found</h1>;
 
-  return (
+return (
     <div className='text-center mt-10'>
       <h1 className='font-bold text-black text-2xl mb-6'>Connections</h1>
 
@@ -62,7 +62,7 @@ const Connections = () => {
         );
       })}
     </div>
-  );
+);
 };
 
 export default Connections;
