@@ -48,10 +48,10 @@ const Login = () => {
   };
 
   return (
-    <div className='flex justify-center ml-96 top-0'>
-      <div className="card bg-neutral-400 w-96 shadow-sm">
+    <div className='w-screen h-screen flex items-center justify-center bg-white'>
+      <div className="card bg-neutral-400 w-96 shadow-lg">
   <div className="card-body">
-    <h2 className="card-title justify-center py-2"> 
+    <h2 className="card-title justify-center py-2 text-xl font-bold"> 
     {isLoginForm ? "Login" : "Sign Up"}
     </h2>
     <div>
@@ -103,7 +103,8 @@ const Login = () => {
   </div>
 </div>
 </div>
+
   )
-}
+};
 
 export default Login;

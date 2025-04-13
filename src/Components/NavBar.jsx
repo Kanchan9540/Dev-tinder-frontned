@@ -25,14 +25,14 @@ const NavBar = () => {
 
 
   return (
-    <div className="navbar top-0 fixed bg-neutral max-w-full shadow-md">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-black text-white flex justify-between items-center px-6 py-4 shadow-lg">
     <div className="flex-1">
       <Link to="/" className="btn btn-ghost text-xl">👩‍💻DevTinder</Link>
     </div>
     {user && (
-    <div className="flex gap-2">
+    <div className="flex">
       {/* <input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" /> */}
-      <div className='text-white'>Welcome, {user.firstName}</div>
+      <div className='text-white m-2'>Welcome, {user.firstName}</div>
         <div className="dropdown dropdown-end flex">
         <div
          tabIndex={0}
@@ -46,7 +46,7 @@ const NavBar = () => {
         </div>
         <ul
           tabIndex={0}
-          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-8 w-52 p-2 shadow">
           <li>
             <Link to="/profile" className="justify-between">
               Profile

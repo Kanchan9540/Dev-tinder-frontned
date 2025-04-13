@@ -25,11 +25,11 @@ const Connections = () => {
   }, []);
 
   if (!connections) return <h2 className="text-center text-black">Loading...</h2>;
-  if (connections.length === 0) return <h1 className="text-center text-black">No Connections Found</h1>;
+  if (connections.length === 0) return <h1 className="flex ml-96 text-center text-black">No Connections Found</h1>;
 
 return (
-    <div className='text-center mt-10'>
-      <h1 className='font-bold text-black text-2xl mb-6'>Connections</h1>
+    <div className='text-center'>
+      <h1 className='font-bold text-black text-2xl h-[80px]'>Connections</h1>
 
       {/* ✅ Render connections list */}
       {connections.map((connection) => {
@@ -39,12 +39,12 @@ return (
         return (
           <div
             key={_id}
-            className="flex m-4 p-4 rounded-lg bg-base-300 w-1/2 mx-auto"
+            className="flex m-4 p-4 rounded-lg bg-base-300 w-full"
           >
             <div>
               <img
                 alt="photo"
-                className="w-72 h-20 rounded-full object-cover"
+                className="w-22 h-20 rounded-full object-cover"
                 src={photoUrl}
               />
             </div>
@@ -56,7 +56,7 @@ return (
               <p>{about}</p>
             </div>
             <Link to={"/chat/" + _id}>
-              <button className="btn btn-primary">Chat</button>
+              <button className="btn bg-blue-800 hover:bg-blue-600 text-black border-2 transition ml-60">Chat</button>
             </Link>
           </div>
         );

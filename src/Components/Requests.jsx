@@ -44,11 +44,11 @@ const reviewRequest = async (status, _id) => {
  if (!requests) return;
 
  if (requests.length === 0)
-   return <h1 className="flex justify-center my-10"> No Requests Found</h1>;
+   return <h1 className="flex justify-center ml-96 font-medium"> No Requests Found</h1>;
 
  return (
-   <div className="text-center my-10">
-     <h1 className="text-bold text-white text-3xl">Connection Requests</h1>
+   <div className="text-center">
+     <h1 className="font-bold text-black text-2xl h-[80px] ml-80">Connection Requests</h1>
 
      {requests.map((request) => {
        const { _id, firstName, lastName, photoUrl, age, gender, about } =
@@ -57,12 +57,12 @@ const reviewRequest = async (status, _id) => {
        return (
          <div
            key={_id}
-           className=" flex justify-between items-center m-4 p-4 rounded-lg bg-base-300  mx-auto"
+           className="flex m-4 p-4 rounded-lg bg-base-300 w-full ml-52 "
          >
            <div>
              <img
                alt="photo"
-               className="w-20 h-20 rounded-full"
+               className="w-22 h-20 rounded-full"
                src={photoUrl}
              />
            </div>
@@ -73,15 +73,15 @@ const reviewRequest = async (status, _id) => {
              {age && gender && <p>{age + ", " + gender}</p>}
              <p>{about}</p>
            </div>
-           <div>
+           <div className='gap-4 flex mx-4 ml-52'>
              <button
-               className="btn btn-primary mx-2"
+               className="btn border-2 transition hover:bg-blue-600 "
                onClick={() => reviewRequest("rejected", request._id)}
              >
                Reject
              </button>
              <button
-               className="btn btn-secondary mx-2"
+               className="btn"
                onClick={() => reviewRequest("accepted", request._id)}
              >
                Accept
