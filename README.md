@@ -42,3 +42,56 @@ Body
    Router = /login => Login
    Router = /connections => Connections
    Router = /profile => Profile
+
+
+
+# AWS DEPLOYEMENT STEPS
+- Signup on AWS
+- Launch Instance
+- chmod 400 <secret>.pem
+- ssh -i "Kanchan-Secret.pem" ubuntu@ec2-13-61-149-53.eu-north-1.compute.amazonaws.com
+- Install node version 22.12.0
+- git clone
+# Frontend
+- npm install -> Its install the dependencies 
+- npm run build
+- sudo apt update -> update the system
+- sudo apt install nginx -> we will use this http server to deploy our application.
+- sudo systemctl start nginx
+- sudo systemctl enable nginx
+- copy code from dist(build files) folder to /var/www/html/
+- sudo scp -r dist/* /var/www/html/
+- Enable port 80 of your Instance
+
+# Backend
+-  Allowed EC2 Instance public IP on mongoDb server
+- npm install pm2 -g
+- pm2 start npm -- start
+- pm2 logs
+- pm2 list, pm2 flush <name>, pm2 stop <name>, pm2 delete <name>.
+-  pm2 start npm --name "devtinder-backend" -- start
+- nginx config : sudo nano /etc/nginx/sites-available/default
+- restart nginx : sudo systemctl restart nginx
+- Modify the BASE URL in Frontend project to "/api". 
+
+- Frontend - http://13.61.149.53/
+- Backend - http://13.61.149.53:3000/
+
+Domain Name = devtinder.com -> 13.61.149.53
+
+- Frontend = devtinder.com
+- Backend = devtinder.com:3000 -> devtinder.com/api
+
+# nginx config
+
+server_name 13.61.149.53;
+
+ location /api/ {
+        proxy_pass http://localhost:3000/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
